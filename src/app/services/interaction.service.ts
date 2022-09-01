@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InteractionService {
 
-  constructor(public loadingController: LoadingController, public toastController: ToastController) { }
+  constructor(private router: Router, private auth: AuthService, public loadingController: LoadingController, public toastController: ToastController, public alertController: AlertController) { }
 
 
   async presentLoading(message: string) {
@@ -23,8 +25,9 @@ export class InteractionService {
 
   async presentToast(message: string) {
     const toast = await this.toastController.create({
+      cssClass: 'my-custom-class',
       message: message,
-      duration: 4000
+      duration: 2000
     });
     toast.present();
   }
@@ -33,6 +36,30 @@ export class InteractionService {
       cssClass: 'my-custom-class',
     });
     await loading.present();
+  }
+  showConfirm() {
+    this.alertController.create({
+      header: 'Cerrar Sesion',
+      subHeader: 'Estas Seguro?',
+      message: 'Presione "Aceptar" Para cerrar sesion',
+      buttons: [
+        {
+          text: 'Cancelar',
+          handler: () => {
+            console.log('Wathever')
+          }
+        },
+        {
+          text: 'Aceptar',
+          handler: () => {
+            this.auth.logout();
+            this.presentToast('logout');
+          }
+        }
+      ]
+    }).then(res => {
+      res.present();
+    });
   }
 }
 

@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../interfaces/user';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,9 @@ import { User } from '../interfaces/user';
 export class DbService {
   private firecollection: AngularFirestoreCollection<User>;
   private users: Observable<User[]>;
+  url = 'https://localhost';
+  constructor(private fire: AngularFirestore, private http: HttpClient) {
 
-  constructor(private fire: AngularFirestore,) {
     this.firecollection = fire.collection<User>('users');
     this.users = this.firecollection.snapshotChanges().pipe(map(
       actions => {
@@ -23,6 +25,21 @@ export class DbService {
         });
       }
     ));
+  }
+  recuperarTodos() {
+    return this.http.get('${this.url}recuperartodos.php');
+  }
+  alta(articulo) {
+    return this.http.post('${this.url}alta.php', JSON.stringify(articulo));
+  }
+  baja(codigo: number) {
+    return this.http.get(`${this.url}baja.php?codigo=${codigo}`);
+  }
+  selecionar(codigo: number) {
+    return this.http.get(`${this.url}selecionar.php?codigo=${codigo}`);
+  }
+  modificacion(articulo) {
+    return this.http.post(`${this.url}modificacion.php`, JSON.stringify(articulo));
   }
   getUsers() {
     return this.users;
@@ -68,4 +85,5 @@ export class DbService {
       console.log('error on getAll--> ', error);
     }
   }
+
 }

@@ -4,7 +4,7 @@
     <ion-row class="ion-justify-content-end">
       <ion-col class="ion-justify-content-end" size="3">
         <ion-button [routerLink]="['/help']" routerLinkActive="router-link-active">
-          <ion-icon name="help-circle-outline"></ion-icon>
+          <ion-icon name="help-circle-outline" slot="end"></ion-icon>
           <ion-label>Ayuda</ion-label>
         </ion-button>
       </ion-col>
@@ -21,11 +21,11 @@
     </ion-tab-button>
 
     <ion-tab-button tab="inicio">
-      <ion-icon name="home"></ion-icon>
+      <ion-icon name="home" id="home"></ion-icon>
       <ion-label>Inicio</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button (click)="logout()">
+    <ion-tab-button color="Success" (click)="logout()">
       <ion-label>Cerrar Sesion</ion-label>
       <ion-icon name="exit"></ion-icon>
     </ion-tab-button>

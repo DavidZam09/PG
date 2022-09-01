@@ -21,7 +21,6 @@ export class AuthService {
   }
   async logout() {
     this.auth.signOut();
-    this.rute.navigate(['/']);
 
   }
   async getUid() {
@@ -33,7 +32,8 @@ export class AuthService {
     }
   }
   stateUser() {
-    return this.auth.authState
+    return this.auth.authState;
   }
+ 
 
 }

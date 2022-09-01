@@ -8,6 +8,13 @@ export interface Product {
     gl: number,
     city: 'Bogota' | 'Cali' | 'Cali-Bogota'
 }
+export enum ViewState {
+    INITIAL = 'INITIAL',
+    LOADING = 'LOADING',
+    ERROR = 'ERROR',
+    EMPTY = 'EMPTY',
+    CONTENT = 'CONTENT',
+  }
 
 export const Cities = ['Bogota', 'Cali', 'Cali-Bogota']
 

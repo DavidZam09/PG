@@ -1,7 +1,7 @@
-<ion-content>
+<ion-content class="ion-content">
   <ion-grid>
     <ion-row class="ion-justify-content-center">
-      <ion-col class="ion-justify-content-center" size="8">
+      <ion-col class="ion-justify-content-center" size="6">
         <ion-title>Iniciar Sesion</ion-title>
         <form class="ion-margin-top" (submit)="login()">
           <ion-list>
@@ -14,9 +14,10 @@
               <ion-input required name="password" [(ngModel)]="credentials.password" type="password">
               </ion-input>
             </ion-item>
-            <ion-item>
-              <ion-button (click)="login()">Iniciar Sesion</ion-button>
-            </ion-item>
+            <ion-button (click)="login()" expand="full">
+              <ion-icon name="log-in-outline" slot="end"></ion-icon>
+              <ion-label>Ingresar</ion-label>
+            </ion-button>
           </ion-list>
         </form>
       </ion-col>

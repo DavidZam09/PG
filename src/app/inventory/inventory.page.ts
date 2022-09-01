@@ -25,7 +25,7 @@ export class InventoryPage implements OnInit {
   constructor(private prod: ProductService, private route: Router, private auth: AuthService, private fire: DbService, private inter: InteractionService) {
     this.auth.stateUser().subscribe(res => {
       if (res) {
-        console.log("logeado")
+        console.log("Eres el mejor :)")
         this.login = false;
         this.getDataUser(res.uid)
       } else {

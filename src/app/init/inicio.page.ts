@@ -9,31 +9,23 @@ import { DbService } from '../services/db.service';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  login: boolean = false;
   rol: 'Usuario' | 'Administrador' = null;
   userId: string = null;
   user: User = null;
-  constructor(private database: AuthService, private fire: DbService) { 
+  constructor(private database: AuthService, private fire: DbService) {}
+
+  ngOnInit() {
     this.database.stateUser().subscribe(res => {
       if (res) {
-        console.log("logeado")
-        this.login = false;
         this.getDataUser(res.uid)
       } else {
         console.log("no login")
-        this.login = true
 
       }
-    })
-  }
-
-  async ngOnInit() {
-
+    });
     this.database.stateUser().subscribe(res => {
       this.getUid();
-      console.log(res, 'estado')
     });
-
   }
 
   async getUid() {

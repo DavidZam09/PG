@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
@@ -10,35 +10,21 @@ import { InteractionService } from '../services/interaction.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   data: User;
-  login: boolean = false;
   rol: 'Usuario' | 'Administrador' = null;
-  sus: any;
 
   constructor(private auth: AuthService,
-    private interaction: InteractionService,
-    private rute: Router, private bd: DbService) {
-
-    this.sus = this.auth.stateUser().subscribe(res => {
+    private interaction: InteractionService, private bd: DbService) { }
+  ngOnInit() {
+    this.auth.stateUser().subscribe(res => {
       if (res) {
-        this.login = false;
         this.getDataUser(res.uid)
-        this.rute.navigate['/'];
-      } else {
-        this.login = true
-
       }
     })
-
-  }
-  ngOnInit() {
-
-
   }
   logout() {
-    this.auth.logout();
-    this.interaction.presentToast('logout');
+    this.interaction.showConfirm();
   }
   getDataUser(uid: string) {
     const path = "users/";
@@ -48,8 +34,6 @@ export class HomePage {
         this.rol = res.perfil
       }
     });
-  }
-  ngOnDestroy(): void {
   }
 }
 

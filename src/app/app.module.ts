@@ -12,12 +12,13 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { ScrollingModule } from '@angular/cdk/scrolling';;
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot({
+  imports: [HttpClientModule ,BrowserModule, IonicModule.forRoot({
     rippleEffect: false,
     mode: 'md',
     backButtonText: 'Atras',
