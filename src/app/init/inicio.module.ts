@@ -7,14 +7,19 @@ import { IonicModule } from '@ionic/angular';
 import { InicioPageRoutingModule } from './inicio-routing.module';
 
 import { InicioPage } from './inicio.page';
+import { MenuComponent } from '../components/menu/menu.component';
+import { InventoryPageModule } from '../inventory/inventory.module';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioPageRoutingModule
+    InicioPageRoutingModule,
+    InventoryPageModule
   ],
-  declarations: [InicioPage]
+  declarations: [InicioPage, MenuComponent]
 })
-export class InicioPageModule {}
+export class InicioPageModule { }

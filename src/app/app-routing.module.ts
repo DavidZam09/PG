@@ -7,11 +7,6 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
-  {
-    path: 'ultra',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    canActivate: [WatchmanGuard],
-  },
 
   {
     path: 'create-product',
@@ -54,9 +49,10 @@ const routes: Routes = [
     loadChildren: () => import('./edit-user/edit-user.module').then(m => m.EditUserPageModule), canActivate: [WatchmanGuard],
   },
   {
-    path: 'articles',
-    loadChildren: () => import('./articles/articles.module').then( m => m.ArticlesPageModule)
+    path: 'inicio',
+    loadChildren: () => import('./init/inicio.module').then(m => m.InicioPageModule), canActivate: [WatchmanGuard]
   },
+
 ];
 
 @NgModule({

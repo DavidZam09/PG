@@ -1,5 +1,6 @@
 import { Component, } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { InteractionService } from 'src/app/services/interaction.service';
 
@@ -15,7 +16,7 @@ export class LoginPage {
     password: null,
   }
 
-  constructor(private auth: AuthService, private interaction: InteractionService, private rute: Router) { }
+  constructor(private auth: AuthService, private interaction: InteractionService, private rute: Router, private menuCtrl: MenuController) { }
 
   async login() {
     await this.interaction.presentLoading('Cargando..');
@@ -30,9 +31,12 @@ export class LoginPage {
       console.log('Hola');
       this.credentials.password = null;
       this.credentials.user = null;
-      this.rute.navigate(['/ultra']);
+      this.rute.navigate(['/inicio']);
     }
-   
+
+  }
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
   }
 
 }

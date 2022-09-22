@@ -1,36 +1,28 @@
-ion-content {
-  top: 10rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  width: 100%;
+
+  ion-label {
+    text-align: center;
+    margin: 10px;
+  }
+
+  ion-title,
+  p {
+    font-size: 30px;
+    text-align: center;
+    color: darkgreen;
+  }
+
+  align-items: center;
+}
+
+h4 {
   text-align: center;
-}
+  color: black solid;
 
-p {
-  color: darkgreen;
-}
-
-ion-title {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 40px;
-  color: darkgreen;
-
-}
-
-ion-label {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 25px;
-}
-
-ion-col,
-ion-item {
-  border-radius: 50px;
-}
-
-ion-col {
-  margin: 2px auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-
-}
-
-#botones {
-  background-color: darkgreen;
 }

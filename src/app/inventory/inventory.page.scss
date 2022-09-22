@@ -1,6 +1,18 @@
-ion-title {
-    font-size: 30px;
-    color: darkgreen;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    width: 100%;
+}
+
+.center {
+    text-align: justify;
+    ion-title {
+        font-size: 30px;
+        text-align: center;
+        color: darkgreen;
+    }
+
 }
