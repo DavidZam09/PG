@@ -16,28 +16,36 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">Proveedor</ion-label>
-        <ion-input [(ngModel)]="data.shop" name="shop" type="text"></ion-input>
+        <ion-input [(ngModel)]="data.supplier" name="shop" type="text"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Precio</ion-label>
-        <ion-input required [(ngModel)]="data.price" name="price" type="number"></ion-input>
+        <ion-label position="floating">Composicion</ion-label>
+        <ion-input required [(ngModel)]="data.composition" name="composition" type="text"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Comprados</ion-label>
-        <ion-input required [(ngModel)]="data.purchased" name="purchased" type="number"></ion-input>
+        <ion-label position="floating">Sustancia Peligrosa</ion-label>
+        <ion-input required [(ngModel)]="data.danger" name="danger" type="text"></ion-input>
       </ion-item>
-        <ion-item>
-          <ion-label position="floating">Gramo/litros</ion-label>
-          <ion-input required [(ngModel)]="data.gl" name="gl" type="number"></ion-input>
-        </ion-item>
-        <ion-item>
+      <ion-item>
+        <ion-label position="fixed">Numero Cas</ion-label>
+        <ion-input required [(ngModel)]="data.numberCase" name="numberCase" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">No. Un (Trasporte)</ion-label>
+        <ion-input required [(ngModel)]="data.transport" name="transport" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">URL Descarga FDS</ion-label>
+        <ion-input required [(ngModel)]="data.url" name="url" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label>Ciudad</ion-label>
         <ion-select required [(ngModel)]="data.city" name="city" okText="Aceptar" cancelText="Cancelar">
           <ion-select-option *ngFor="let city of cities" [value]="city">{{city}}</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-button expand="block" type="submit" (click)="createProduct()">
-        Crear
+       Guardar
       </ion-button>
     </form>
   </ion-card>

@@ -73,12 +73,4 @@ export class EditUserPage implements OnInit {
       }
     });
   }
-  async photoUp(event: any) {
-    const path = 'Users';
-    const nombre = 'img';
-    const file = event.target.files[0];
-    const res = await this.storage.uploadFile(file, path, nombre);
-    console.log(res)
-
-  }
 }

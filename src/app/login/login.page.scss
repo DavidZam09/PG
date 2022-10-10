@@ -9,14 +9,17 @@
 
 
 }
-ion-content {
-    --background: url('../../assets/icon/favicon.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+
 .container {
     width: 400px;
     margin: auto;
     margin-top: 20px;
+}
+
+img {
+    margin-left: 30px;
+    display: block;
+    align-items: flex-start;
+    justify-content: center;
+    image-orientation: flip;
 }

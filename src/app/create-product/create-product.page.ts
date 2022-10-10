@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Cities, Product } from '../interfaces/product';
 import { DbService } from '../services/db.service';
 import { InteractionService } from '../services/interaction.service';
+import { ProductService } from '../services/product.service';
+
 
 @Component({
   selector: 'app-create-product',
@@ -16,17 +18,17 @@ export class CreateProductPage implements OnInit {
   data: Product = {
     id: this.database.getId(),
     nameProd: '',
-    shop: '',
-    stocks: null,
-    price: null,
-    purchased: null,
-    city: null,
-    gl: null
+    supplier: '',
+    composition: null,
+    danger: '',
+    numberCase: null,
+    transport: null,
+    city: 'Cali',
+    url: null,
   }
-
   private ruter = 'products/';
 
-  constructor(private database: DbService, private interaction: InteractionService, private rute: Router) { }
+  constructor(private interaction: InteractionService, private rute: Router, private database: DbService) { }
 
   ngOnInit() { }
   async createProduct() {

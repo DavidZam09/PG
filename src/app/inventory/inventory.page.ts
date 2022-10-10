@@ -44,6 +44,7 @@ export class InventoryPage implements OnInit {
       this.inter.dismissLoading();
       this.sProduct = this.data;
     })
+    console.log(this.products)
 
   }
   deleteUser(id: Product) {
