@@ -1,41 +1,31 @@
 <ion-content class="container">
   <ion-grid>
-    <ion-row *ngIf="user" class="ion-justify-content-center">
-      <ion-col size="8">
-        <ion-title>HOLA</ion-title>
-        <h4>{{user.Name}}</h4>
-      </ion-col>
-    </ion-row>
-    <ion-col>
-      <p>¿QUE DESEAS HACER?</p>
-    </ion-col>
-
     <ion-row class="ion-justify-content-center">
       <ion-col size="8">
-        <ion-item button [routerLink]="['/inventory']">
+        <ion-item button [routerLink]="['/report']">
           <ion-icon name="clipboard-sharp"></ion-icon>
           <ion-label>
-            Quimicos
+            Reporte a Mantenimiento
           </ion-label>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-row class="ion-justify-content-center">
       <ion-col size="8">
-        <ion-item button *ngIf="rol == 'Administrador'" [routerLink]="['/usermanagement']">
+        <ion-item button [routerLink]="['/usermanagement']">
           <ion-icon name="people-outline"></ion-icon>
           <ion-label>
-            Usuarios
+            Deacrargar Carta laboral
           </ion-label>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-row class="ion-justify-content-center">
       <ion-col size="8" id="botones">
-        <ion-item button [routerLink]="['/other-services']">
+        <ion-item button [routerLink]="['/other-services']" disabled>
           <ion-icon name="reader"></ion-icon>
           <ion-label>
-            Servicios
+            Afiliaciones Actuales
           </ion-label>
         </ion-item>
       </ion-col>
