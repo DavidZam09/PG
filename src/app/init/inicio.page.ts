@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
 import { DbService } from '../services/db.service';
@@ -12,7 +14,7 @@ export class InicioPage implements OnInit {
   rol: 'Usuario' | 'Administrador' = null;
   userId: string = null;
   user: User = null;
-  constructor(private database: AuthService, private fire: DbService) {}
+  constructor(private rute: Router, private database: AuthService, private fire: DbService,private menuCtrl: MenuController) { }
 
   ngOnInit() {
     this.database.stateUser().subscribe(res => {
@@ -27,7 +29,10 @@ export class InicioPage implements OnInit {
       this.getUid();
     });
   }
-
+ 
+  ionViewWillEnter() {
+    this.menuCtrl.enable(true);
+  }
   async getUid() {
     const id = await this.database.getUid();
     if (id) {

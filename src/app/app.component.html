@@ -8,6 +8,12 @@
     </ion-header>
     <ion-content class="ion-padding">
       <ion-menu-toggle>
+        <ion-item button [routerLink]="['/inicio']">
+          <ion-icon name="home" slot="end"></ion-icon>
+          <ion-label>Inicio</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
         <ion-item button [routerLink]="['/inventory']">Quimicos</ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
@@ -16,8 +22,10 @@
       <ion-menu-toggle>
         <ion-item button [routerLink]="['/report']">Reportes</ion-item>
       </ion-menu-toggle>
+
       <ion-item button (click)="logout()">
-        <ion-icon name="exit"></ion-icon> Cerrar sesion
+        <ion-icon name="exit" slot="end"></ion-icon>
+        <ion-label>Cerrar sesion</ion-label>
       </ion-item>
     </ion-content>
   </ion-menu>
@@ -27,10 +35,12 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <a href="/inicio"><ion-title>
-          ULTRALAV S.A.S
-        </ion-title></a> 
-        
+        <a href="/inicio">
+          <ion-title>
+            ULTRALAV S.A.S
+          </ion-title>
+        </a>
+
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">

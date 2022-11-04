@@ -31,7 +31,7 @@ export class LoginPage {
       console.log('Hola');
       this.credentials.password = null;
       this.credentials.user = null;
-      this.rute.navigate(['/inicio']);
+      this.rute.navigateByUrl('/inicio')
     }
 
   }

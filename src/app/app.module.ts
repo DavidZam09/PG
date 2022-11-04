@@ -14,7 +14,6 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HttpClientModule } from '@angular/common/http';
-import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [AppComponent],

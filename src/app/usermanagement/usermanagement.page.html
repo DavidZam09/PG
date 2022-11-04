@@ -1,12 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="ultra"></ion-back-button>
+      <ion-back-button defaultHref="inicio"></ion-back-button>
     </ion-buttons>
+    <ion-title>Usuarios</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-title>Usuarios</ion-title>
+  
   <ion-list>
     <ion-item-sliding *ngFor="let user of users">
       <ion-item lines="inset" button [routerLink]="['/edit-user', user.uid]">

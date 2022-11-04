@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { InicioPageRoutingModule } from './inicio-routing.module';
 
 import { InicioPage } from './inicio.page';
-import { MenuComponent } from '../components/menu/menu.component';
 import { InventoryPageModule } from '../inventory/inventory.module';
 
 
@@ -20,6 +19,6 @@ import { InventoryPageModule } from '../inventory/inventory.module';
     InicioPageRoutingModule,
     InventoryPageModule
   ],
-  declarations: [InicioPage, MenuComponent]
+  declarations: [InicioPage]
 })
 export class InicioPageModule { }
