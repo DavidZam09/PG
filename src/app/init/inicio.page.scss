@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-items: center;
   width: 100%;
 
   ion-label {
@@ -18,11 +17,30 @@
     color: darkgreen;
   }
 
-  align-items: center;
+  .help {
+    margin-top: 5rem;
+  }
+
+  .img {
+    display: inline-block;
+    margin-top: 5rem;
+  }
+
+  ion-item {
+    display: block;
+    border: 0;
+    align-items: flex-end;
+
+    h1 {
+      display: inline-block;
+      text-align: end;
+      font-size: 16px;
+    }
+  }
+
 }
 
-h4 {
+h3 {
   text-align: center;
   color: black solid;
-
 }

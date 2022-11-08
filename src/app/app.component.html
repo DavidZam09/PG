@@ -2,7 +2,7 @@
 
   <ion-menu swipeEnabled="true" #menu contentId="main-content">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar color="success shade">
         <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -14,13 +14,22 @@
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
-        <ion-item button [routerLink]="['/inventory']">Quimicos</ion-item>
+        <ion-item button [routerLink]="['/inventory']">
+          <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>Quimicos
+        </ion-item>
+
       </ion-menu-toggle>
       <ion-menu-toggle>
-        <ion-item button [routerLink]="['/create-product']">Nuevo Producto</ion-item>
+        <ion-item button [routerLink]="['/create-product']">
+          <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>Nuevo Producto
+        </ion-item>
+
       </ion-menu-toggle>
       <ion-menu-toggle>
-        <ion-item button [routerLink]="['/report']">Reportes</ion-item>
+        <ion-item button [routerLink]="['/report']" vertical="bottom">
+          <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>Reportes
+        </ion-item>
+
       </ion-menu-toggle>
 
       <ion-item button (click)="logout()">
@@ -31,11 +40,11 @@
   </ion-menu>
   <div class="ion-page" id="main-content">
     <ion-header>
-      <ion-toolbar class="ion-no-border">
+      <ion-toolbar no-border color="success shade">
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <a href="/inicio">
+        <a href="/inicio" slot="end">
           <ion-title>
             ULTRALAV S.A.S
           </ion-title>

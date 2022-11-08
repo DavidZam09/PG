@@ -28,7 +28,6 @@ export class LoginPage {
     if (answer) {
       this.interaction.dismissLoading();
       this.interaction.presentToast('Ingreso Correcto');
-      console.log('Hola');
       this.credentials.password = null;
       this.credentials.user = null;
       this.rute.navigateByUrl('/inicio')
