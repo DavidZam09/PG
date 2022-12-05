@@ -39,6 +39,10 @@
         <ion-input required [(ngModel)]="data.url" name="url" type="text"></ion-input>
       </ion-item>
       <ion-item>
+        <ion-label position="fixed">URL Descarga FT</ion-label>
+        <ion-input required [(ngModel)]="data.ft" name="url" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label>Ciudad</ion-label>
         <ion-select required [(ngModel)]="data.city" name="city" okText="Aceptar" cancelText="Cancelar">
           <ion-select-option *ngFor="let city of cities" [value]="city">{{city}}</ion-select-option>

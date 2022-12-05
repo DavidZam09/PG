@@ -51,9 +51,14 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./init/inicio.module').then(m => m.InicioPageModule), canActivate: [WatchmanGuard]
-  },  {
+  },
+  {
     path: 'other-services',
-    loadChildren: () => import('./other-services/other-services.module').then( m => m.OtherServicesPageModule)
+    loadChildren: () => import('./other-services/other-services.module').then(m => m.OtherServicesPageModule), canActivate: [WatchmanGuard]
+  },
+  {
+    path: 'detail-product/:id',
+    loadChildren: () => import('./detail-product/detail-product.module').then(m => m.DetailProductPageModule), canActivate: [WatchmanGuard]
   },
 
 

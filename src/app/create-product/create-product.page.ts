@@ -19,6 +19,7 @@ export class CreateProductPage implements OnInit {
     id: this.database.getId(),
     nameProd: '',
     supplier: '',
+    ft: '',
     composition: null,
     danger: '',
     numberCase: null,

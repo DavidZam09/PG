@@ -1,0 +1,102 @@
+<ion-content>
+  <ion-grid>
+    <ion-row *ngIf="data">
+      <ion-col class="log">
+        <img
+          src="https://www.ultralav.com.co/wp-content/uploads/2022/10/Logo_ferreteria_coercial_verde__1_-removebg-preview-1.png"
+          alt="ultralav">
+        <ion-col>
+          <ion-label> CAS: {{data.numberCase}}</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label>
+            UN: {{data.transport}}
+          </ion-label>
+        </ion-col>
+      </ion-col>
+
+      <ion-col>
+        <h1>{{data.nameProd}}</h1>
+        <ion-label position="floating">{{data.composition}}</ion-label>
+        <h1>Proveedor</h1>
+        <ion-label position="floating">{{data.supplier}}</ion-label>
+      </ion-col>
+
+      <ion-col class="data">
+        <h1>PELIGROS</h1>
+        <img src="https://www.ultralav.com.co/wp-content/uploads/2022/12/picto.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="data" class="ion-justify-content-center">
+      <ion-col class="log" size="4">
+        <h1>IDICACIONES DE PELIGRO</h1>
+        <ion-label>{{data.danger}}</ion-label>
+      </ion-col>
+      <ion-col size="3">
+        <h1>ELEMENTOS DE PROTECCION</h1>
+        <img src="https://www.ultralav.com.co/wp-content/uploads/2022/12/secury.png" alt="">
+      </ion-col>
+      <ion-col class="pigto">
+        <h1>PICTO. NFPA</h1>
+        <img src="https://www.ultralav.com.co/wp-content/uploads/2022/12/pictog.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="foot">
+        <ion-button expand="block" type="submit" color="success" target="_blank" [href]="url">
+          Descargar Ficha De
+          Seguridad
+        </ion-button>
+        <ion-button expand="block" type="submit" color="success" target="_blank" [href]="ft">
+          Descargar Ficha Tecnica
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <ion-grid>
+    <ion-row *ngIf="data">
+      <ion-col>
+        <ion-label position="floating">{{data.supplier}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="data">
+      <ion-col>
+        <ion-label position="floating">Proveedor</ion-label>
+        <ion-input [(ngModel)]="data.supplier" name="shop" type="text"></ion-input>
+        <ion-label position="fixed">Composicion</ion-label>
+        <ion-input required [(ngModel)]="data.composition" name="composition" type="text"></ion-input>
+        <ion-label position="fixed">Sustancia Peligrosa</ion-label>
+        <ion-input required [(ngModel)]="data.danger" name="danger" type="text"></ion-input>
+        <ion-label position="fixed">Numero Cas</ion-label>
+        <ion-input required [(ngModel)]="data.numberCase" name="numberCase" type="text"></ion-input>
+        <ion-label position="fixed">No. Un (Trasporte)</ion-label>
+        <ion-input required [(ngModel)]="data.transport" name="transport" type="text"></ion-input>
+        <ion-label position="fixed">URL FT</ion-label>
+        <ion-input required [(ngModel)]="data.ft" name="ft" type="text"></ion-input>
+        <ion-label>Ciudad</ion-label>
+        <ion-select required [(ngModel)]="data.city" name="city" okText="Aceptar" cancelText="Cancelar">
+          <ion-select-option *ngFor="let city of cities" [value]="city">{{city}}</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-row *ngIf="data">
+        <ion-col>
+          <ion-button expand="block" type="submit" color="success" (click)="updateProduct()">
+            Guardar
+          </ion-button>
+          <ion-button expand="block" type="submit" color="success">
+            Descargar Ficha Tecnica
+          </ion-button>
+          <ion-button expand="block" type="submit" download color="success" target="_blank" [href]="url">
+            Descargar Ficha De
+            Seguridad
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </ion-grid>-->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="deleteProduct(data.id)" routerDirection="forward">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -22,7 +22,6 @@ export class InicioPage implements OnInit {
         this.getDataUser(res.uid)
       } else {
         console.log("no login")
-
       }
     });
     this.database.stateUser().subscribe(res => {

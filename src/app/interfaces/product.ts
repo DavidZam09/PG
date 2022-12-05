@@ -2,6 +2,7 @@ export interface Product {
   id: string,
   nameProd: string,
   supplier: string,
+  ft: string,
   composition: number,
   danger: string,
   numberCase: number,

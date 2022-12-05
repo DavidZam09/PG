@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Cities, Product } from '../interfaces/product';
-import { ProductService } from '../services/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { InteractionService } from '../services/interaction.service';
+import { Cities, Product } from '../interfaces/product';
 import { DbService } from '../services/db.service';
-
-
+import { InteractionService } from '../services/interaction.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
-  selector: 'app-product-management',
-  templateUrl: './product-management.page.html',
-  styleUrls: ['./product-management.page.scss'],
+  selector: 'app-detail-product',
+  templateUrl: './detail-product.page.html',
+  styleUrls: ['./detail-product.page.scss'],
 })
-export class ProductManagementPage implements OnInit {
-
+export class DetailProductPage implements OnInit {
 
   url: any;
+  ft: any;
   data: Product = {
     id: '',
     nameProd: '',
     supplier: '',
-    ft:'',
+    ft: '',
     composition: null,
     danger: '',
     numberCase: null,
@@ -36,7 +34,7 @@ export class ProductManagementPage implements OnInit {
     private rute: Router,
     private router: ActivatedRoute,
     private load: InteractionService,
-    private productService: ProductService) {}
+    private productService: ProductService) { }
 
   ngOnInit() {
     this.productId = this.router.snapshot.params['id'];
@@ -50,6 +48,7 @@ export class ProductManagementPage implements OnInit {
       this.load.dismissLoading();
       this.data = answer;
       this.url = answer.url;
+      this.ft = answer.ft;
     })
 
   }
@@ -63,4 +62,5 @@ export class ProductManagementPage implements OnInit {
   deleteProduct(id: string) {
     this.database.deleteDoc(this.ruter, id);
   }
+
 }

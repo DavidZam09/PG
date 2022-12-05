@@ -1,0 +1,58 @@
+img {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.log {
+    margin-left: 10%;
+}
+
+.data {
+    margin-right: 10%;
+}
+
+.one {
+    margin-left: 10%;
+}
+
+.pigto {
+    margin-right: 10%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+}
+
+.foot {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.two {
+    margin-right: 10%;
+}
+
+h1 {
+    text-align: center;
+    border: 5px solid rgba(253, 173, 0, 0.684);
+    background-color: rgba(253, 173, 0, 0.684);
+
+}
+
+ion-grid {
+    --ion-grid-column-padding: 5px;
+    border-collapse: collapse;
+    border-style: hidden;
+    text-align: center;
+
+    ion-col {
+        border: 1px solid black;
+        border-right: 0;
+    }
+
+    ion-col:last-child {
+        border-right: 1px solid black;
+    }
+
+}

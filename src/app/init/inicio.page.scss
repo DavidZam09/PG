@@ -17,24 +17,25 @@
     color: darkgreen;
   }
 
-  .help {
-    margin-top: 5rem;
-  }
-
   .img {
-    display: inline-block;
-    margin-top: 5rem;
+    margin-top: 10rem;
   }
 
   ion-item {
-    display: block;
     border: 0;
     align-items: flex-end;
 
-    h1 {
-      display: inline-block;
-      text-align: end;
-      font-size: 16px;
+  }
+
+  .help {
+    margin-top: 15rem;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: black;
+      text-align: center;
+      align-items: center;
     }
   }
 

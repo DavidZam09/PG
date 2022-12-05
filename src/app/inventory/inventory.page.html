@@ -3,7 +3,7 @@
     <ion-title>Quimicos</ion-title>
     <ion-list>
       <ion-item-sliding *ngFor="let product of products">
-        <ion-item lines="inset" button [routerLink]="['/product-management', product.id]">
+        <ion-item lines="inset" button [routerLink]="['/detail-product', product.id]">
           <ion-label>
             <h1>{{product.nameProd}}</h1>
           </ion-label>
