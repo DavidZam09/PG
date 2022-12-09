@@ -1,18 +1,17 @@
 .content {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     align-items: center;
     width: 100%;
 }
 
 .center {
     text-align: justify;
-    ion-title {
-        font-size: 30px;
-        text-align: center;
-        color: darkgreen;
-    }
+    
 
+}
+ion-title {
+    font-size: 30px;
+    text-align: center;
+    color: darkgreen;
 }

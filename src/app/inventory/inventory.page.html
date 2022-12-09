@@ -1,19 +1,22 @@
 <ion-content class="content">
-  <div class="center">
-    <ion-title>Quimicos</ion-title>
-    <ion-list>
-      <ion-item-sliding *ngFor="let product of products">
-        <ion-item lines="inset" button [routerLink]="['/detail-product', product.id]">
-          <ion-label>
-            <h1>{{product.nameProd}}</h1>
-          </ion-label>
-        </ion-item>
-      </ion-item-sliding>
-    </ion-list>
-  </div>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-title>Quimicos</ion-title>
+  <ion-button routerLink="/create-product">Nuevo Producto</ion-button>
+  <ion-list>
+    <ion-item-sliding *ngFor="let product of products">
+      <ion-item lines="inset" button [routerLink]="['/detail-product', product.id]">
+        <ion-label>
+          <h1>{{product.nameProd}}</h1>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content *ngIf="products" loadingText="Please wait..." loadingSpinner="bubbles">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!--<ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/create-product" routerDirection="forward">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab>-->
 </ion-content>

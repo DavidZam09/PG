@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { InventoryPageRoutingModule } from './inventory-routing.module';
-
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { InventoryPage } from './inventory.page';
 
 @NgModule({
@@ -13,8 +13,9 @@ import { InventoryPage } from './inventory.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    InventoryPageRoutingModule
+    InventoryPageRoutingModule,
+    ScrollingModule,
   ],
   declarations: [InventoryPage]
 })
-export class InventoryPageModule {}
+export class InventoryPageModule { }

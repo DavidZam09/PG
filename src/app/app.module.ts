@@ -12,7 +12,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     mode: 'md',
     backButtonText: 'Atras',
     animated: !isPlatform('mobileweb')
-  }), ScrollingModule,
+  }),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()), provideFirestore(() => getFirestore()),

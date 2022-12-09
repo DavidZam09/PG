@@ -5,14 +5,9 @@
         <img
           src="https://www.ultralav.com.co/wp-content/uploads/2022/10/Logo_ferreteria_coercial_verde__1_-removebg-preview-1.png"
           alt="ultralav">
-        <ion-col>
-          <ion-label> CAS: {{data.numberCase}}</ion-label>
-        </ion-col>
-        <ion-col>
-          <ion-label>
-            UN: {{data.transport}}
-          </ion-label>
-        </ion-col>
+        <ion-label class="label"> CAS: {{data.numberCase}}</ion-label>
+        <ion-label class="label"> UN: {{data.transport}}</ion-label>
+
       </ion-col>
 
       <ion-col>
@@ -27,9 +22,9 @@
         <img src="https://www.ultralav.com.co/wp-content/uploads/2022/12/picto.png" alt="">
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="data" class="ion-justify-content-center">
-      <ion-col class="log" size="4">
-        <h1>IDICACIONES DE PELIGRO</h1>
+    <ion-row *ngIf="data">
+      <ion-col class="log">
+        <h1>INDICACIONES DE PELIGRO</h1>
         <ion-label>{{data.danger}}</ion-label>
       </ion-col>
       <ion-col size="3">
@@ -38,14 +33,13 @@
       </ion-col>
       <ion-col class="pigto">
         <h1>PICTO. NFPA</h1>
-        <img src="https://www.ultralav.com.co/wp-content/uploads/2022/12/pictog.png" alt="">
+        <img class="mag" src="https://www.ultralav.com.co/wp-content/uploads/2022/12/pictog.png" alt="">
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col class="foot">
         <ion-button expand="block" type="submit" color="success" target="_blank" [href]="url">
-          Descargar Ficha De
-          Seguridad
+           Descargar Ficha De Seguridad
         </ion-button>
         <ion-button expand="block" type="submit" color="success" target="_blank" [href]="ft">
           Descargar Ficha Tecnica

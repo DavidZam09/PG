@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="ultra"></ion-back-button>
+      <ion-back-button defaultHref="inicio"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -27,19 +27,19 @@
         <ion-input required [(ngModel)]="data.danger" name="danger" type="text"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="fixed">Numero Cas</ion-label>
-        <ion-input required [(ngModel)]="data.numberCase" name="numberCase" type="number"></ion-input>
+        <ion-label position="floating">Numero Cas</ion-label>
+        <ion-input required [(ngModel)]="data.numberCase" name="numberCase" type="text"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="fixed">No. Un (Trasporte)</ion-label>
+        <ion-label position="floating">No. Un (Trasporte)</ion-label>
         <ion-input required [(ngModel)]="data.transport" name="transport" type="text"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="fixed">URL Descarga FDS</ion-label>
+        <ion-label position="floating">URL Descarga FDS</ion-label>
         <ion-input required [(ngModel)]="data.url" name="url" type="text"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="fixed">URL Descarga FT</ion-label>
+        <ion-label position="floating">URL Descarga FT</ion-label>
         <ion-input required [(ngModel)]="data.ft" name="url" type="text"></ion-input>
       </ion-item>
       <ion-item>
@@ -49,7 +49,7 @@
         </ion-select>
       </ion-item>
       <ion-button expand="block" type="submit" (click)="createProduct()">
-       Guardar
+        Guardar
       </ion-button>
     </form>
   </ion-card>

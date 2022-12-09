@@ -1,3 +1,7 @@
+ion-content {
+  display: flex;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -10,6 +14,19 @@
     margin: 10px;
   }
 
+  .footer {
+    margin-top: 15rem;
+
+    a {
+      text-decoration: none;
+      color: black;
+      text-align: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   ion-title,
   p {
     font-size: 30px;
@@ -18,25 +35,19 @@
   }
 
   .img {
-    margin-top: 10rem;
+    margin: auto;
   }
 
   ion-item {
     border: 0;
     align-items: flex-end;
-
   }
 
   .help {
     margin-top: 15rem;
     align-items: center;
 
-    a {
-      text-decoration: none;
-      color: black;
-      text-align: center;
-      align-items: center;
-    }
+
   }
 
 }

@@ -22,7 +22,7 @@ export class CreateProductPage implements OnInit {
     ft: '',
     composition: null,
     danger: '',
-    numberCase: null,
+    numberCase: '',
     transport: null,
     city: 'Cali',
     url: null,
@@ -31,7 +31,12 @@ export class CreateProductPage implements OnInit {
 
   constructor(private interaction: InteractionService, private rute: Router, private database: DbService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.data.nameProd = '';
+    this.data.numberCase = '';
+    this.data.danger = '';
+
+  }
   async createProduct() {
     await this.interaction.presentLoading('Creando...');
     await this.database.createDoc(this.data, this.ruter, this.data.id);

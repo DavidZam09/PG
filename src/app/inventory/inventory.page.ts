@@ -36,6 +36,7 @@ export class InventoryPage implements OnInit {
       }
     })
   }
+  
 
   async ngOnInit() {
     await this.inter.presentLoadingOnly();
@@ -62,4 +63,6 @@ export class InventoryPage implements OnInit {
       }
     });
   }
+ 
+
 }

@@ -5,7 +5,7 @@ export interface Product {
   ft: string,
   composition: number,
   danger: string,
-  numberCase: number,
+  numberCase: string,
   transport: number,
   url: string,
   city: 'Bogota' | 'Cali' | 'Cali-Bogota'
