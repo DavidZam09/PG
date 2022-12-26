@@ -17,4 +17,4 @@ import { ProductManagementPage } from './product-management.page';
   ],
   declarations: [ProductManagementPage]
 })
-export class ProductManagementPageModule {}
+export class ProductManagementPageModule { }

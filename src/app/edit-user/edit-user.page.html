@@ -6,9 +6,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-
   <div id="container">
-
     <ion-card>
       <ion-title>Usuario</ion-title>
       <form>
@@ -25,7 +23,6 @@
           <ion-label position="floating">Mail</ion-label>
           <ion-input required [(ngModel)]="data.mail" name="mail" type="text"></ion-input>
         </ion-item>
-
         <ion-item *ngIf="data && rol == 'Administrador'">
           <ion-label>Rol</ion-label>
           <ion-select required [(ngModel)]="data.perfil" name="perfil" okText="Aceptar" cancelText="Cancelar">
@@ -37,7 +34,6 @@
         </ion-button>
       </form>
     </ion-card>
-
   </div>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="danger" (click)="delete(data.uid)" routerDirection="forward">

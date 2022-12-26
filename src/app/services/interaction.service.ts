@@ -8,24 +8,33 @@ import { AuthService } from './auth.service';
 })
 export class InteractionService {
 
-  constructor(private router: Router, private auth: AuthService, public loadingController: LoadingController, public toastController: ToastController, public alertController: AlertController) { }
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+    public loadingController: LoadingController,
+    public toastController: ToastController,
+    public alertController: AlertController) { }
 
 
   async presentLoading(message: string) {
-    const loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
+    await this.loadingController.create({
+      spinner: 'circles',
       message: message,
+    }).then(res => {
+      res.present();
     });
-    await loading.present();
+
   }
 
   async dismissLoading() {
-    await this.loadingController.dismiss();
+    await this.loadingController.dismiss().then(err => {
+      err.valueOf;
+    })
   }
 
   async presentToast(message: string) {
     const toast = await this.toastController.create({
-      cssClass: 'my-custom-class',
+      cssClass: 'custom-loading',
       message: message,
       duration: 2000
     });
@@ -33,7 +42,7 @@ export class InteractionService {
   }
   async presentLoadingOnly() {
     const loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
+      spinner: 'circles',
     });
     await loading.present();
   }

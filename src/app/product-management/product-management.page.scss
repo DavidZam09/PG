@@ -1,17 +1,9 @@
-#container {
-    position: absolute;
-    left: 10%;
-    right: 10%;
-    top: 10%;
-}
-
 ion-title {
     text-align: center;
     color: darkgreen;
 }
 
 ion-grid {
-    --ion-grid-column-padding: 5px;
     border-collapse: collapse;
     border-style: hidden;
     text-align: center;
@@ -38,15 +30,4 @@ ion-grid {
     ion-item:last-child {
         text-align: center;
     }
-
-    ion-input {
-        display: inline;
-    }
-
-    ion-label {
-
-        display: inline;
-    }
-
-
 }

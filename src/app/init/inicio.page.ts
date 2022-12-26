@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { format, parseISO } from 'date-fns';
 import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
 import { DbService } from '../services/db.service';
@@ -14,9 +14,22 @@ export class InicioPage implements OnInit {
   rol: 'Usuario' | 'Administrador' = null;
   userId: string = null;
   user: User = null;
-  constructor(private rute: Router, private database: AuthService, private fire: DbService,private menuCtrl: MenuController) { }
+  modes = ['date', 'date-time', 'month', 'month-year', 'time', 'time-date', 'year'];
+  slectMode = 'date';
+  showPicker: false;
+  dateValue = format(new Date(), 'yyyy-MM-dd') + 'T09:00:00.00Z';
+  formatedString = '';
 
-  ngOnInit() {
+  constructor(private database: AuthService, private fire: DbService, private menuCtrl: MenuController) {
+    this.setToday();
+  }
+
+  setToday() {
+    this.formatedString = format(parseISO(format(new Date(), 'yyyy-MM-dd') + 'T09:00:00.00Z'), 'HH:mm, MMM d, yyyy');
+
+  }
+
+  ngOnInit(): void {
     this.database.stateUser().subscribe(res => {
       if (res) {
         this.getDataUser(res.uid)
@@ -28,7 +41,7 @@ export class InicioPage implements OnInit {
       this.getUid();
     });
   }
- 
+
   ionViewWillEnter() {
     this.menuCtrl.enable(true);
   }
@@ -48,7 +61,6 @@ export class InicioPage implements OnInit {
       if (res) {
         this.user = res;
       }
-
     })
   }
   getDataUser(uid: string) {
@@ -60,5 +72,4 @@ export class InicioPage implements OnInit {
       }
     });
   }
-
 }

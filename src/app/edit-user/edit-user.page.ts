@@ -14,7 +14,12 @@ import { InteractionService } from '../services/interaction.service';
 })
 export class EditUserPage implements OnInit {
   data: User = {
-    uid: '', Name: '', lastname: '', mail: '', password: '', perfil: null,
+    uid: '',
+    Name: '',
+    lastname: '',
+    mail: '',
+    password: '',
+    perfil: null,
   }
   private rute = 'users/';
   login: boolean = false;
@@ -40,7 +45,6 @@ export class EditUserPage implements OnInit {
       }
     })
   }
-
   ngOnInit() {
     this.UserId = this.router.snapshot.params['id'];
     if (this.UserId) {

@@ -17,4 +17,4 @@ import { ReportPage } from './report.page';
   ],
   declarations: [ReportPage]
 })
-export class ReportPageModule {}
+export class ReportPageModule { }

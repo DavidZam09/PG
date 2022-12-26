@@ -20,7 +20,7 @@ export class ProductManagementPage implements OnInit {
     id: '',
     nameProd: '',
     supplier: '',
-    ft:'',
+    ft: '',
     composition: null,
     danger: '',
     numberCase: null,
@@ -36,7 +36,7 @@ export class ProductManagementPage implements OnInit {
     private rute: Router,
     private router: ActivatedRoute,
     private load: InteractionService,
-    private productService: ProductService) {}
+    private productService: ProductService) { }
 
   ngOnInit() {
     this.productId = this.router.snapshot.params['id'];
