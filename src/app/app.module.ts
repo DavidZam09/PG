@@ -14,6 +14,9 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { HttpClientModule } from '@angular/common/http';
+import { File } from '@ionic-native/file/ngx';
+import { FileOpener, } from '@ionic-native/file-opener/ngx';
+import { PreviewAnyFile } from '@ionic-native/preview-any-file/ngx'
 
 
 
@@ -34,7 +37,13 @@ import { HttpClientModule } from '@angular/common/http';
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'
     })],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [ File,
+    FileOpener,
+    { 
+      provide: RouteReuseStrategy, 
+      useClass: IonicRouteStrategy 
+    }, PreviewAnyFile,
+  ],
   bootstrap: [AppComponent],
 
 })

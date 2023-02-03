@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
-import { format, parseISO } from 'date-fns';
+import { format, parseISO} from 'date-fns';
 import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
 import { DbService } from '../services/db.service';
-
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -15,20 +14,29 @@ export class InicioPage implements OnInit {
   userId: string = null;
   user: User = null;
   modes = ['date', 'date-time', 'month', 'month-year', 'time', 'time-date', 'year'];
-  slectMode = 'date';
+  slectMode = 'time';
   showPicker: false;
   dateValue = format(new Date(), 'yyyy-MM-dd') + 'T09:00:00.00Z';
   formatedString = '';
 
+
+
+
   constructor(private database: AuthService, private fire: DbService, private menuCtrl: MenuController) {
     this.setToday();
+      // Get the time zone set on the user's device
+  
   }
 
   setToday() {
-    this.formatedString = format(parseISO(format(new Date(), 'yyyy-MM-dd') + 'T09:00:00.00Z'), 'HH:mm, MMM d, yyyy');
+    this.formatedString = format(parseISO(format(new Date(), 'yyyy-MM-dd') + 'T09:00:00.00Z'), 'MMM d, yyyy');
 
   }
-
+  dateChange(value) {
+    this.dateValue = value;
+    this.formatedString = format(parseISO(value), 'HH:mm, MMM d, yyyy');
+    this.showPicker = false;
+  }
   ngOnInit(): void {
     this.database.stateUser().subscribe(res => {
       if (res) {

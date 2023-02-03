@@ -60,6 +60,14 @@ const routes: Routes = [
     path: 'detail-product/:id',
     loadChildren: () => import('./detail-product/detail-product.module').then(m => m.DetailProductPageModule), canActivate: [WatchmanGuard]
   },
+  {
+    path: 'pdf',
+    loadChildren: () => import('./pdf/pdf.module').then(m => m.PDFPageModule,), canActivate: [WatchmanGuard]
+  },
+  {
+    path: 'pdf/:folder',
+    loadChildren: () => import('./pdf/pdf.module').then(m => m.PDFPageModule,), canActivate: [WatchmanGuard]
+  },
 
 
 ];

@@ -1,11 +1,24 @@
 <ion-content class="container">
-  <ion-item (click)="showPicker = false">
-    <ion-label>Date</ion-label>
-    <ion-text slot="end">
-      {{formatedString}}
-    </ion-text>
-  </ion-item>
+
   <ion-grid>
+    <ion-segment>
+      <ion-item lines="none">
+        <ion-datetime-button slot="end" datetime="datetime"></ion-datetime-button>
+      </ion-item>
+
+      <ion-item lines="none" button>
+        <ion-label class="img">Necesitas ayuda</ion-label>
+        <ion-icon name="help-sharp" slot="end"></ion-icon>
+      </ion-item>
+    </ion-segment>
+
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime locale="en-US" [presentation]="'date-time'" id="datetime" [showDefaultButtons]="true">
+        </ion-datetime>
+      </ng-template>
+    </ion-modal>
     <ion-row *ngIf="user" class="ion-justify-content-center">
       <ion-col size="8">
         <ion-title>HOLA</ion-title>
@@ -46,26 +59,13 @@
       </ion-col>
     </ion-row>
     <ion-row class="ion-justify-content-center">
-      <ion-col size="6" class="footer">
-        <ion-item button>
-          <a target="_blank" href="https://www.ultralav.com.co/">
-            <ion-label>ULTRALAV.COM.CO</ion-label>
-          </a>
-          <ion-icon name="help-sharp" slot="end"></ion-icon>
-        </ion-item>
-      </ion-col>
-      <ion-col size="6" class="footer">
-        <ion-item button>
-          <ion-label class="img">Necesitas ayuda</ion-label>
-          <ion-icon name="help-sharp" slot="end"></ion-icon>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-justify-content-center">
       <ion-col class="img" size="8">
-        <img
-          src="https://www.ultralav.com.co/wp-content/uploads/2022/10/Logo_ferreteria_coercial_verde__1_-removebg-preview-1.png"
-          alt="ultralav">
+        <a target="_blank" href="https://www.ultralav.com.co/">
+          <img
+            src="https://www.ultralav.com.co/wp-content/uploads/2022/10/Logo_ferreteria_coercial_verde__1_-removebg-preview-1.png"
+            alt="ultralav">
+        </a>
+
       </ion-col>
     </ion-row>
   </ion-grid>
