@@ -1,56 +1,69 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+:host {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    --background: #000000a6 url('../../assets/imgs/148694495-croacia-isla-de-hvar-bol-vista-aérea-en-zlatni-rat-playa-y-mar-desde-el-aire-lugar-famoso-en.webp') 0 0/100% 100% no-repeat;
 
-  .label {
-    text-align: center;
-    margin: 10px;
-  }
 
-  .footer {
-    margin-top: 14rem;
+    .label {
+      text-align: center;
+      font-size: 35px;
 
-    a {
-      text-decoration: none;
-      color: black;
+      margin: 10px;
+      --background: transparent !important;
+    }
+
+    .footer {
+      margin-top: 14rem;
+
+      a {
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+      }
+    }
+ion-icon{
+  color: white;
+}
+    ion-title,
+    p {
+      font-size: 30px;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      text-shadow: 1px 2px grey;
+    }
+
+    ion-item {
+      border-radius: 25px;
+      border: 2px solid #000000;
+      align-items: flex-end;
+      color: white;
+      --background: #000000a6;
+    }
+
+    .img {
       text-align: center;
       align-items: center;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 8px;
+      justify-content: center;
+    }
+
+    .help {
+      margin-top: 15rem;
+      align-items: center;
     }
   }
 
-  ion-title,
-  p {
-    font-size: 30px;
+  h3 {
     text-align: center;
-    color: darkgreen;
+    color: white solid;
   }
-
-  ion-item {
-    border: 0;
-    align-items: flex-end;
-  }
-
-  .img {
-    text-align: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-  }
-
-  .help {
-    margin-top: 15rem;
-    align-items: center;
-  }
-}
-
-h3 {
-  text-align: center;
-  color: black solid;
 }

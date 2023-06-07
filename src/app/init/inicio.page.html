@@ -1,28 +1,22 @@
-<ion-content class="container">
-
+<ion-content class="container" no-scroll padding>
   <ion-grid>
     <ion-segment>
       <ion-item lines="none">
         <ion-datetime-button slot="end" datetime="datetime"></ion-datetime-button>
       </ion-item>
 
-      <ion-item lines="none" button>
-        <ion-label class="img">Necesitas ayuda</ion-label>
-        <ion-icon name="help-sharp" slot="end"></ion-icon>
-      </ion-item>
     </ion-segment>
-
-
     <ion-modal [keepContentsMounted]="true">
       <ng-template>
-        <ion-datetime locale="en-US" [presentation]="'date-time'" id="datetime" [showDefaultButtons]="true">
+        <ion-datetime locale="en-US" [presentation]="'time'" id="datetime" [showDefaultButtons]="true">
         </ion-datetime>
       </ng-template>
     </ion-modal>
     <ion-row *ngIf="user" class="ion-justify-content-center">
       <ion-col size="8">
         <ion-title>HOLA</ion-title>
-        <h3>{{user.Name}}</h3>
+        <ion-title>{{user.Name}} {{user.lastname}}
+        </ion-title>
       </ion-col>
     </ion-row>
     <ion-col>
@@ -65,9 +59,7 @@
             src="https://www.ultralav.com.co/wp-content/uploads/2022/10/Logo_ferreteria_coercial_verde__1_-removebg-preview-1.png"
             alt="ultralav">
         </a>
-
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>
