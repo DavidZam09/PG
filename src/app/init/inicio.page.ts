@@ -13,8 +13,6 @@ export class InicioPage implements OnInit {
   rol: 'Usuario' | 'Administrador' = null;
   userId: string = null;
   user: User = null;
-  modes = ['date', 'date-time', 'month', 'month-year', 'time', 'time-date', 'year'];
-  slectMode = 'time';
   showPicker: false;
   dateValue = format(new Date(), 'yyyy-MM-dd') + 'T09:00:00.00Z';
   formatedString = '';

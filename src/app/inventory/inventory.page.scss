@@ -1,16 +1,50 @@
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
+ion-content {
+    --background: #000000a6 url('../../assets/imgs/148694495-croacia-isla-de-hvar-bol-vista-aérea-en-zlatni-rat-playa-y-mar-desde-el-aire-lugar-famoso-en.webp') 0 0/100% 100% no-repeat;
 
-.center {
-    text-align: justify;
-}
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
 
-ion-title {
-    font-size: 30px;
-    text-align: center;
-    color: darkgreen;
+
+    }
+
+    .center {
+        text-align: justify;
+    }
+
+    ion-button {
+        align-items: end;
+        justify-content: end;
+        text-align: end;
+        
+    }
+
+    ion-title {
+        font-size: 30px;
+        text-align: center;
+        color: rgb(255, 255, 255);
+    }
+
+    ion-list {
+        background: transparent !important;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+
+    }
+
+    ion-item {
+
+        text-align: center;
+        border-radius: 25px;
+        border: 2px solid #000000;
+        align-items: flex-end;
+        color: white;
+        --background: #000000d5;
+
+
+    }
 }

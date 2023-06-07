@@ -1,17 +1,5 @@
 <ion-content class="container" no-scroll padding>
   <ion-grid>
-    <ion-segment>
-      <ion-item lines="none">
-        <ion-datetime-button slot="end" datetime="datetime"></ion-datetime-button>
-      </ion-item>
-
-    </ion-segment>
-    <ion-modal [keepContentsMounted]="true">
-      <ng-template>
-        <ion-datetime locale="en-US" [presentation]="'time'" id="datetime" [showDefaultButtons]="true">
-        </ion-datetime>
-      </ng-template>
-    </ion-modal>
     <ion-row *ngIf="user" class="ion-justify-content-center">
       <ion-col size="8">
         <ion-title>HOLA</ion-title>
